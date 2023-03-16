@@ -1,16 +1,16 @@
 class LinkedListImpl implements LinkedList {
 
-    private Node head;
+    private ListNode head;
 
     @Override
     public void append(int value) {
-        Node newNode = new Node(value);
+        ListNode newNode = new ListNode(value);
         if (head == null) {
             head = newNode;
             return;
         }
 
-        Node currentNode = head;
+        ListNode currentNode = head;
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
@@ -19,7 +19,7 @@ class LinkedListImpl implements LinkedList {
 
     @Override
     public void prepend(int value) {
-        Node newHead = new Node(value);
+        ListNode newHead = new ListNode(value);
         newHead.next = head;
         head = newHead;
     }
@@ -29,7 +29,7 @@ class LinkedListImpl implements LinkedList {
         if (head == null) {
             System.out.println("list is empty");
         }
-        Node currentNode = head;
+        ListNode currentNode = head;
         while (currentNode.next != null) {
             System.out.print(currentNode.data);
             currentNode = currentNode.next;
@@ -50,8 +50,8 @@ class LinkedListImpl implements LinkedList {
         if (head.next == null) {
             return;
         }
-        Node previousNode = head;
-        Node currentNode = head.next;
+        ListNode previousNode = head;
+        ListNode currentNode = head.next;
         while (currentNode.data != value && currentNode.next != null) {
             previousNode = currentNode;
             currentNode = currentNode.next;
